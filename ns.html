@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health</title>
+    <style>
+        /* --- SENIORENGERECHTES FARBSCHEMA & TYPOGRAFIE --- */
+        body {
+            background-color: #fdfbf7; /* Sanftes Creme-Weiß */
+            color: #22252a; /* Dunkles Anthrazit */
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+            font-size: 20px; /* Extra große Basisschrift */
+        
+        }
+        .site-logo {
+           width: 250px;       /* Perfekte Breite für das Logo */
+          height: auto;       /* Verhindert Verzerrungen */
+          margin-bottom: 15px;
+         border-radius: 8px; /* Leicht abgerundete Ecken statt Kreis */
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .container {
+            max-width: 1400px; /* Breiter für das Layout */
+            margin: 0 auto;
+            padding: 0 25px;
+        }
+
+        /* --- HERO HEADER --- */
+        header {
+            background-color: #ffffff;
+            border-bottom: 3px solid #e6e1d6;
+            padding: 35px 0;
+            text-align: center;
+        }
+
+        .subtitle {
+            font-size: 1.4rem;
+            color: #795438;
+            font-weight: 600;
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* --- HAUPTBEREICH MIT ÜBERSCHRIFTEN --- */
+        .main-section {
+            padding: 35px 0;
+        }
+
+        .section-title {
+            font-size: 2.6rem;
+            font-weight: 800;
+            color: #124076;
+            margin: 0 0 5px 0;
+        }
+
+        .section-subtitle {
+            font-size: 1.05rem;
+            color: #55585d;
+            font-style: italic;
+            font-weight: 500;
+            margin: 0;
+        }
+
+        /* --- NAVIGATION (Barrierefreie Klickflächen) --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .btn-hub {
+            display: inline-block;
+            background-color: #795438;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 22px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.05rem;
+            transition: background-color 0.2s;
+        }
+
+        .btn-hub:hover {
+            background-color: #5c3f29;
+        }
+
+        .nav-categories {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .btn-category {
+            background-color: #e6e1d6;
+            color: #124076;
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .btn-category:hover {
+            background-color: #124076;
+            color: #ffffff;
+        }
+
+        /* --- RESSOURCEN-KARTEN / SEKTIONEN --- */
+        .resource-card {
+            background-color: #ffffff;
+            border: 2px solid #ebdcd0;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.02);
+            scroll-margin-top: 20px;
+        }
+
+        .card-title {
+            color: #124076;
+            font-size: 2rem;
+            margin: 0 0 15px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: bold;
+        }
+
+        .card-divider {
+            border: none;
+            border-top: 3px solid #124076;
+            margin-bottom: 20px;
+        }
+
+        /* --- TABELLEN-STYLING (Hoher Kontrast und Lesbarkeit) --- */
+        .table-container {
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th, td {
+            padding: 16px 18px;
+            border-bottom: 1px solid #e6e1d6;
+            vertical-align: middle;
+            text-align: left; /* Gleiche Ausrichtung für Header und Datenzellen */
+        }
+
+        th {
+            background-color: #f7f5f0;
+            color: #795438;
+            font-weight: 700;
+            font-size: 1.05rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .col-timeline { width: 15%; color: #666;  }
+        .col-title { width: 48%; font-weight: 600; color: #22252a; }
+        .col-expert { width: 22%; color: #444; }
+        .col-access { width: 15%; text-align: left; }
+
+        /* --- AKTIONSTASTEN --- */
+        .btn-access {
+            display: inline-block;
+            background-color: #124076;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: bold;
+            text-align: center;
+            white-space: nowrap;
+            transition: background-color 0.15s;
+        }
+
+        .btn-access:hover {
+            background-color: #0d3058;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #22252a;
+            color: #a0aab5;
+            padding: 40px 0;
+            text-align: center;
+            font-size: 1rem;
+        }
+
+        footer a {
+            color: #ffffff;
+            text-decoration: underline;
+            margin: 0 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HAUPT-HEADER -->
+    <header>
+        <div class="container">
+            <img src="logo.png" alt="ELMAX Logo" class="site-logo">
+            <h1 class="section-title">Vital Media Health Directory</h1>
+            <p class="subtitle">Mental Health</p>
+            <p class="section-subtitle">On this website we provide 10,000 + Videos and Podcasts covering a wide range of Health, Nutrition and Medical subjects</p>
+        </div>
+    </header>
+
+    <div class="container main-section">
+     <div class="container">
+        <!-- NAVIGATION -->
+        <nav>
+            <a href="index.html" class="btn-hub">➔ Back to Central Hub</a>
+            <div class="nav-categories">
+                <a href="mental-health.html" class="btn-category">Depression & Anxiety</a>
+                <a href="adhd.html" class="btn-category">ADHD</a>
+                <a href="bh.html" class="btn-category">Brain Health & Decline</a>
+                <a href="#natural-solutions" class="btn-category">Natural Solutions</a>
+            </div>
+        </nav>
+
+        
+
+        <!-- 4. NATURAL MENTAL HEALTH SOLUTIONS -->
+        <section class="resource-card" id="natural-solutions">
+            <h2 class="card-title">🌿 Natural Mental Health Solutions</h2>
+            <hr class="card-divider">
+            <table>
+                <thead>
+                    <tr>
+                        <th>DATE</th>
+                        <th>TITLE</th>
+                        <th>PRESENTER</th>
+                        <th style="text-align: right;">WATCH/LISTEN</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="col-timeline">21 Oct 2016</td>
+                        <td class="col-title">How Your Gut Influences Your Mental Health</td>
+                        <td class="col-expert">Dr Emeran Mayer</td>
+                        <td class="col-access"><a href="https://www.youtube.com/watch?v=_PLD5RLLvfQ" target="_blank" class="btn-access">Watch Video</a></td>
+                    </tr>
+                    <tr>
+                        <td class="col-timeline">19 Jul 2019</td>
+                        <td class="col-title">Can't Eat Gluten Anymore? The Shocking Truth</td>
+                        <td class="col-expert">Dr Mark Hyman</td>
+                        <td class="col-access"><a href="https://www.youtube.com/watch?v=5FpdqsBntNM" target="_blank" class="btn-access">Watch Video</a></td>
+                    </tr>
+                    <tr>
+                        <td class="col-timeline">11 Oct 2019</td>
+                        <td class="col-title">This could be why you're depressed or anxious</td>
+                        <td class="col-expert">Johann Hari</td>
+                        <td class="col-access"><a href="https://www.youtube.com/watch?v=MB5IX-np5fE" target="_blank" class="btn-access">Watch Video</a></td>
+                    </tr>
+                    <tr>
+                        <td class="col-timeline">13 May 2021</td>
+                        <td class="col-title">Foods That Reduce Anxiety & Depression</td>
+                        <td class="col-expert">Dr Caroline Leaf & Dr Uma Naidoo</td>
+                        <td class="col-access"><a href="https://www.youtube.com/watch?v=M2sb9kocedo" target="_blank" class="btn-access">Watch Video</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="col-timeline">09 Feb 2023</td>
+                        <td class="col-title">Understanding Nutritional Psychiatry</td>
+                        <td class="col-expert">Dr Uma Naidoo</td>
+                        <td class="col-access"><a href="https://www.youtube.com/watch?v=dE4i_g96Jxw" target="_blank" class="btn-access">Watch Video</a></td>
+                    </tr>
+                    <tr>
+                        <td class="col-timeline">04 Mar 2024</td>
+                        <td class="col-title">Stop Negative Thoughts: Metabolic Health</td>
+                        <td class="col-expert">Dr Mark Hyman</td>
+                        <td class="col-access"><a href="https://www.youtube.com/watch?v=Tgoz-a0tyBg" target="_blank" class="btn-access">Watch Video</a></td>
+                    </tr>
+                    <tr>
+                        <td class="col-timeline">29 May 2024</td>
+                        <td class="col-title">3 Minerals That Can Change Your Mood</td>
+                        <td class="col-expert">Dr Mark Hyman</td>
+                        <td class="col-access"><a href="https://www.youtube.com/watch?v=a7rUUHySxew" target="_blank" class="btn-access">Watch Video</a></td>
+                    </tr>
+                    <tr>
+                        <td class="col-timeline">20 Jun 2024</td>
+                        <td class="col-title">These Foods Fuel Anxiety</td>
+                        <td class="col-expert">Dr Uma Naidoo</td>
+                        <td class="col-access"><a href="https://www.youtube.com/watch?v=_NbVmrJA1_Q" target="_blank" class="btn-access">Watch Video</a></td>
+                    </tr>
+                    <tr>
+                        <td class="col-timeline">24 Sep 2025</td>
+                        <td class="col-title">Use Metabolic Psychiatry to Heal Anxiety</td>
+                        <td class="col-expert">Dr Mark Hyman & Dr William Li</td>
+                        <td class="col-access"><a href="https://www.youtube.com/watch?v=mVPhltup0IY" target="_blank" class="btn-access">Watch Video</a></td>
+                    </tr>
+                    <tr>
+                        <td class="col-timeline">12 Mar 2026</td>
+                        <td class="col-title">Astaxanthin and Anxiety - Linked to 50+ Videos</td>
+                        <td class="col-expert">Samuel Shepherd & Others</td>
+                        <td class="col-access"><a href="https://www.youtube.com/results?search_query=ValAsta+astaxanthin+anxiety" target="_blank" class="btn-access">Watch Videos</a></td>
+                    </tr>
+                    <tr>
+                        <td class="col-timeline">Apr 2026</td>
+                        <td class="col-title">Oxytocin and Attachment - Linked to 40+ Vidtos</td>
+                        <td class="col-expert">Various Experts</td>
+                        <td class="col-access"><a href="https://www.youtube.com/results?search_query=oxytocin+stress+attachment+podcast" target="_blank" class="btn-access">Watch Videos</a></td>
+                    </tr>
+                    <tr>
+                        <td class="col-timeline">29 Apr 2026</td>
+                        <td class="col-title">Diet and Mental Health Decline</td>
+                        <td class="col-expert">Dr Mark Hyman &  Dr William Li</td>
+                        <td class="col-access"><a href="https://www.youtube.com/watch?v=rY0OE-1blL0" target="_blank" class="btn-access">Watch Video</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+         <div style="background-color: #f5f0eb;
+              border: 1px solid #e2d9cd;
+              border-radius: 6px;
+              padding: 20px; 
+              max-width: 1400px; 
+              margin: 20px auto; 
+              font-family: Arial, 
+              sans-serif;">
+         
+         <div style="font-weight: bold; 
+              color: #333333; 
+              margin-bottom: 10px; 
+              font-size: 0.8em;"
+              
+              >⚠️Disclaimer Warning:</div>
+         
+         <p style="color: #cc0000; 
+            font-size: 15px;
+            font-style: italic; 
+            line-height: 0.9; 
+            margin: 0;"
+
+           >Medical Disclaimer &amp; Universal Subscriber Guidance: The content provided in this visual- Audio Directory/library is for educational, informational, and archival purposes only. It is not intended as medical advice, diagnosis, or treatment. You must always consult with a licensed physician or qualified healthcare professional before making any significant changes to your diet, fasting routines, exercise regimens, or overall lifestyle.</p>
+         </div>
+
+     </div>
+    </div>
+
+    <!-- FOOTER MIT UNTERNEHMENSDATEN -->
+    <footer>
+        <div class="container">
+            <p style="margin: 0 0 15px 0;">&copy; 2026 Vital Media Health Directory. All Rights Reserved.</p>
+            <p style="margin: 0;">
+                <a href="privacy.html">Privacy Policy</a> | 
+                <a href="terms.html">Terms of Service</a> | 
+                <a href="disclaimer.html">Risk Disclaimer</a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>

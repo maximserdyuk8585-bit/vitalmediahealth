@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep Dives</title>
+    <style>
+        /* --- SENIORENGERECHTES FARBSCHEMA & TYPOGRAFIE --- */
+         body {
+            background-color: #fdfbf7; /* Sanftes Creme-Weiß */
+            color: #22252a; /* Dunkles Anthrazit */
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+            font-size: 20px; /* Extra große Basisschrift */
+        
+         }
+            .site-logo {
+           width: 250px;       /* Perfekte Breite für das Logo */
+           height: auto;       /* Verhindert Verzerrungen */
+           margin-bottom: 15px;
+           border-radius: 8px; /* Leicht abgerundete Ecken statt Kreis */
+           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }    
+        
+         .container {
+            max-width: 1400px; /* Breiter für das Layout */
+            margin: 0 auto;
+            padding: 0 25px;
+        }
+
+        /* --- HERO HEADER --- */
+        header {
+            background-color: #ffffff;
+            border-bottom: 3px solid #e6e1d6;
+            padding: 35px 0;
+            text-align: center;
+        }
+
+        .subtitle {
+            font-size: 1.4rem;
+            color: #795438;
+            font-weight: 600;
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* --- HAUPTBEREICH MIT ÜBERSCHRIFTEN --- */
+        .main-section {
+            padding: 35px 0;
+        }
+
+        .section-title {
+            font-size: 2.6rem;
+            font-weight: 800;
+            color: #124076;
+            margin: 0 0 5px 0;
+        }
+
+        .section-subtitle {
+            font-size: 1.05rem;
+            color: #55585d;
+            font-style: italic;
+            font-weight: 500;
+            margin: 0;
+        }
+
+        /* --- NAVIGATION (Barrierefreie Klickflächen) --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .btn-hub {
+            display: inline-block;
+            background-color: #795438;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 22px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.05rem;
+            transition: background-color 0.2s;
+        }
+
+        .btn-hub:hover {
+            background-color: #5c3f29;
+        }
+
+        .nav-categories {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .btn-category {
+            background-color: #e6e1d6;
+            color: #124076;
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .btn-category:hover {
+            background-color: #124076;
+            color: #ffffff;
+        }
+
+        /* --- RESSOURCEN-KARTEN / SEKTIONEN --- */
+        .resource-card {
+            background-color: #ffffff;
+            border: 2px solid #ebdcd0;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.02);
+            scroll-margin-top: 20px;
+        }
+
+        .card-title {
+            color: #124076;
+            font-size: 2rem;
+            margin: 0 0 15px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: bold;
+        }
+
+        .card-divider {
+            border: none;
+            border-top: 3px solid #124076;
+            margin-bottom: 20px;
+        }
+        
+        /* --- TABELLEN-STYLING (Hoher Kontrast und Lesbarkeit) --- */
+        .table-container {
+            overflow-x: auto;
+        }
+         table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th, td {
+            padding: 16px 18px;
+            border-bottom: 1px solid #e6e1d6;
+            vertical-align: middle;
+            text-align: left; /* Gleiche Ausrichtung für Header und Datenzellen */
+        }
+
+        th {
+            background-color: #f7f5f0;
+            color: #795438;
+            font-weight: 700;
+            font-size: 1.05rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .col-timeline { width: 15%; color: #666;  }
+        .col-title { width: 48%; font-weight: 600; color: #22252a; }
+        .col-expert { width: 22%; color: #444; }
+        .col-access { width: 15%; text-align: left; }
+
+        /* --- AKTIONSTASTEN --- */
+        .btn-access {
+            display: inline-block;
+            background-color: #124076;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: bold;
+            text-align: center;
+            white-space: nowrap;
+            transition: background-color 0.15s;
+        }
+
+        .btn-access:hover {
+            background-color: #0d3058;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #22252a;
+            color: #a0aab5;
+            padding: 40px 0;
+            text-align: center;
+            font-size: 1rem;
+        }
+
+        footer a {
+            color: #ffffff;
+            text-decoration: underline;
+            margin: 0 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HAUPT-HEADER -->
+    <header>
+        <div class="container">
+            <img src="logo.png" alt="ELMAX Hub Logo" class="site-logo">
+            <h1 class="section-title">Vital Media Health Directory</h1>
+            <p class="subtitle">DEEP DIVES</p>
+            <p class="section-subtitle">On this website we provide 10,000 + Videos and Podcasts covering a wide range of Health, Nutrition and Medical subjects</p>
+        </div>
+    </header>
+
+    <div class="container main-section">
+     <div class="container">
+        <!-- NAVIGATION -->
+        <nav>
+            <a href="index.html" class="btn-hub">➔ Back to Central Hub</a>
+            <div class="nav-categories">
+                <a href="#clinical-trials" class="btn-category">Clinical Trials</a>
+                <a href="sc.html" class="btn-category">Scientific Papers</a>
+                <a href="s.html" class="btn-category">Supplements</a>
+                <a href="me.html" class="btn-category">Metabolic Health & Integrative Medicine</a>
+                
+            </div>
+        </nav>
+
+        <!-- 1. CLINICAL TRIALS EXPLAINED -->
+        <section class="resource-card" id="clinical-trials">
+            <h2 class="card-title">🔬 Clinical Trials Explained</h2>
+            <hr class="card-divider">
+            <table>
+                <thead>
+                    <tr>
+                        <th>DATE</th>
+                        <th>TITLE</th>
+                        <th>PRESENTER</th>
+                        <th style="text-align: right;">WATCH/LISTEN</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="col-timeline">08 Apr 2014</td>
+                        <td class="col-title">Can we eat to starve cancer?</td>
+                        <td class="col-expert">	Dr William Li</td>
+                        <td class="col-access"><a href="https://www.youtube.com/watch?v=OjkzfeJz66o" target="_blank" class="btn-access">Watch Video</a></td>
+                    </tr>
+                    <tr>
+                        <td class="col-timeline">14 Oct 2017</td>
+                        <td class="col-title">A Novel Strategy for the Metabolic Management of Cancer</td>
+                        <td class="col-expert">Prof Thomas Seyfried</td>
+                        <td class="col-access"><a href="https://www.youtube.com/watch?v=9WFxjO3OHy0" target="_blank" class="btn-access">Watch Video</a></td>
+                    </tr>
+                    <tr>
+                        <td class="col-timeline">17 May 2021</td>
+                        <td class="col-title">Epigenetics in Longevity Medicine: Key Concepts Everyone Should Know</td>
+                        <td class="col-expert">Dr Lucia Aronica</td>
+                        <td class="col-access"><a href="https://www.youtube.com/watch?v=emxzgNrkv5k" target="_blank" class="btn-access">Watch Video</a></td>
+                    </tr>
+                    <tr>
+                        <td class="col-timeline">19 Aug 2022</td>
+                        <td class="col-title">Testosterone & Testosterone Replacement Therapy (TRT)</td>
+                        <td class="col-expert">Dr Peter Attia & Dr Andrew Huberman</td>
+                        <td class="col-access"><a href="https://www.youtube.com/watch?v=H64KAkM0wF4" target="_blank" class="btn-access">Watch Video</a></td>
+                    </tr>
+                    <tr>
+                        <td class="col-timeline">16 Jun 2023</td>
+                        <td class="col-title">Saturated Fat Misconceptions: Separating Fact from Fiction</td>
+                        <td class="col-expert"> Dr Carvalho & Simon Hill</td>
+                        <td class="col-access"><a href="https://www.youtube.com/watch?v=-imSGYtUn5s" target="_blank" class="btn-access">Watch Video</a></td>
+                    </tr>
+                    <tr>
+                        <td class="col-timeline">11 Apr 2024</td>
+                        <td class="col-title">Clinical trials eye repurposed drugs to help Parkinson's patients</td>
+                        <td class="col-expert">WOOD TV8</td>
+                        <td class="col-access"><a href="https://www.youtube.com/watch?v=FNw4SGAylrY" target="_blank" class="btn-access">Watch Video</a></td>
+                    </tr>
+                    <tr>
+                        <td class="col-timeline">13 Feb 2025</td>
+                        <td class="col-title">The Two Fuels Cancer Needs to Survive—And How to Cut Them Off</td>
+                        <td class="col-expert">Prof Thomas Seyfried</td>
+                        <td class="col-access"><a href="https://www.youtube.com/watch?v=HZZxYRmU8-k" target="_blank" class="btn-access">Watch Video</a></td>
+                    </tr>
+                    <tr>
+                        <td class="col-timeline">09 Aug 2025</td>
+                        <td class="col-title">Ivermectin, Mebendazole, & Prostate Cancer?</td>
+                        <td class="col-expert">Dr Mark Scholz &  Dr Mark Moyad</td>
+                        <td class="col-access"><a href="https://www.youtube.com/watch?v=xHcZ6TRR9xE" target="_blank" class="btn-access">Watch Video</a></td>
+                    </tr>
+                    <tr>
+                        <td class="col-timeline">25 Feb 2026</td>
+                        <td class="col-title">99% of Cancer Cells Die Itself From This Bacteria</td>
+                        <td class="col-expert">	Dr William Li</td>
+                        <td class="col-access"><a href="https://www.youtube.com/watch?v=oCGc3wJDSdQ" target="_blank" class="btn-access">Watch Video</a></td>
+                    </tr>
+                    <tr>
+                        <td class="col-timeline">02 Jun 2026</td>
+                        <td class="col-title">Peptides: The Science, Uses & Safety</td>
+                        <td class="col-expert">Dr Abud Bakri</td>
+                        <td class="col-access"><a href="https://www.youtube.com/watch?v=7qleqUObmk8" target="_blank" class="btn-access">Watch Video</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        
+
+         <div style="background-color: #f5f0eb;
+              border: 1px solid #e2d9cd;
+              border-radius: 6px;
+              padding: 20px; 
+              max-width: 1400px; 
+              margin: 20px auto; 
+              font-family: Arial, 
+              sans-serif;">
+         
+         <div style="font-weight: bold; 
+              color: #333333; 
+              margin-bottom: 10px; 
+              font-size: 0.8em;"
+              
+              >⚠️Disclaimer Warning:</div>
+         
+         <p style="color: #cc0000; 
+            font-size: 15px;
+            font-style: italic; 
+            line-height: 0.9; 
+            margin: 0;"
+
+           >Medical Disclaimer &amp; Universal Subscriber Guidance: The content provided in this visual- Audio Directory/library is for educational, informational, and archival purposes only. It is not intended as medical advice, diagnosis, or treatment. You must always consult with a licensed physician or qualified healthcare professional before making any significant changes to your diet, fasting routines, exercise regimens, or overall lifestyle.</p>
+         </div>
+
+        
+            
+     </div>
+    </div>
+
+    <!-- FOOTER MIT RECHTLICHEN VERWEISEN -->
+    <footer>
+        <div class="container">
+            <p style="margin: 0 0 15px 0;">&copy; 2026 Vital Media Health Directory. All Rights Reserved.</p>
+            <p style="margin: 0;">
+                <a href="privacy.html">Privacy Policy</a> | 
+                <a href="terms.html">Terms of Service</a> | 
+                <a href="disclaimer.html">Risk Disclaimer</a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>

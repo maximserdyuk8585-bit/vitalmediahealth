@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrition & Epigenetics Directory - Vital Media Health Hub</title>
+    <style>
+        /* --- BRAND DESIGN (ELMAX-STYLING) --- */
+        body {
+            background-color: #fdfbf7; /* Sanftes Creme-Weiß */
+            color: #22252a; /* Dunkles Anthrazit */
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+            font-size: 20px; /* Große, lesbare Schrift */
+        }
+         .site-logo {
+           width: 250px;       /* Perfekte Breite für das Logo */
+          height: auto;       /* Verhindert Verzerrungen */
+          margin-bottom: 15px;
+         border-radius: 8px; /* Leicht abgerundete Ecken statt Kreis */
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        } 
+        
+
+        .container {
+            max-width: 1400px; /* Breite für Tabellen-Verzeichnisse */
+            margin: 0 auto;
+            padding: 40px 25px;
+        }
+
+        /* --- HEADER & TAGLINE --- */
+        header {
+            background-color: #ffffff;
+            border-bottom: 3px solid #e6e1d6;
+            padding: 35px 0;
+            text-align: center;
+        }
+
+        .logo-title {
+            font-size: 2.6rem;
+            font-weight: 800;
+            color: #124076;
+            margin: 0 0 5px 0;
+        }
+
+        .subtitle {
+            font-size: 1.4rem;
+            color: #795438;
+            font-weight: 600;
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .tagline {
+            font-size: 1.05rem;
+            color: #55585d;
+            font-style: italic;
+            font-weight: 500;
+            margin: 0;
+        }
+
+        /* --- NAVIGATION & QUICK LINKS --- */
+        .navigation-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .btn-back {
+            display: inline-block;
+            background-color: #795438;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 22px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.05rem;
+            transition: background-color 0.2s;
+        }
+
+        .btn-back:hover {
+            background-color: #5c3f29;
+        }
+
+        .quick-nav-links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .btn-nav-jump {
+            background-color: #e6e1d6;
+            color: #124076;
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .btn-nav-jump:hover {
+            background-color: #124076;
+            color: #ffffff;
+        }
+
+        /* --- SEKTIONS-STYLING --- */
+        .category-section {
+            background-color: #ffffff;
+            border: 2px solid #e6e1d6;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.02);
+            scroll-margin-top: 20px;
+        }
+
+        .category-section h2 {
+            color: #124076;
+            font-size: 2rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #124076;
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* --- VERZEICHNIS-TABELLEN --- */
+        .table-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th, td {
+            padding: 16px 18px;
+            border-bottom: 1px solid #e6e1d6;
+            vertical-align: middle;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f7f5f0;
+            color: #795438;
+            font-weight: 700;
+            font-size: 1.05rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            background-color: #fffdf9;
+        }
+
+        .col-date { width: 15%; color: #666; }
+        .col-title { width: 48%; font-weight: 600; color: #22252a; }
+        .col-expert { width: 22%; color: #444; }
+        .col-action { width: 15%; text-align: left; }
+
+        /* --- AKTION-BUTTONS (LINKS) --- */
+        .btn-listen {
+            display: inline-block;
+            background-color: #124076;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: bold;
+            text-align: center;
+            white-space: nowrap;
+            transition: background-color 0.15s;
+        }
+
+        .btn-listen:hover {
+            background-color: #0b2c52;
+        }
+        footer a {
+            color: #ffffff;
+            text-decoration: underline;
+            margin: 0 15px;
+        }
+
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #22252a;
+            color: #a0aab5;
+            padding: 40px 0;
+            text-align: center;
+            font-size: 1rem;
+        }
+        footer a {
+            color: #ffffff;
+            text-decoration: underline;
+            margin: 0 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container" style="padding-top:0; padding-bottom:0;">
+            <img src="logo.png" alt="ELMAX Logo" class="site-logo">
+            <h1 class="logo-title">Vital Media Health Directory</h1>
+            <p class="subtitle">Nutrition</p>
+            <p class="tagline">On this website we provide 10,000 + Videos and Podcasts covering a wide range of Health, Nutrition and Medical subjects</p>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <div class="navigation-bar">
+            <a href="index.html" class="btn-back">➔ Back to Central Hub</a>
+            <div class="quick-nav-links">
+                <a href="nutrition.html" class="btn-nav-jump">General Nutrition</a>
+                <a href="fasting.html" class="btn-nav-jump">Fasting &amp; Obesity</a>
+                <a href="keto.html" class="btn-nav-jump">Keto &amp; Low-Carb</a>
+                <a href="plant.html" class="btn-nav-jump">Plant-Based</a>
+                <a href="#brain-foods" class="btn-nav-jump">Brain Foods</a>
+                <a href="supp.html" class="btn-nav-jump">Supplements</a>
+            </div>
+        </div>
+
+        
+
+        <section class="category-section" id="brain-foods">
+            <h2>🧠 Brain-Boosting Foods</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>DATE</th>
+                            <th>TITLE</th>
+                            <th>PRESENTER</th>
+                            <th style="text-align: right;">WATCH/LISTEN</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td class="col-date">18 Oct 2021</td>
+                            <td class="col-title">Nutrients For Brain Health & Performance</td>
+                            <td class="col-expert">Dr Andrew Huberman</td>
+                            <td class="col-action"><a href="https://www.youtube.com/watch?v=E7W4OQfJWdw" target="_blank" class="btn-listen">Watch Video</a></td>
+                        </tr>
+                        <tr>
+                            <td class="col-date">28 Mar 2022</td>
+                            <td class="col-title">What to Eat for Optimal Brain Health</td>
+                            <td class="col-expert">Dr David Perlmutter & Max Lugavere</td>
+                            <td class="col-action"><a href="https://www.youtube.com/watch?v=I9vslbqZyb0" target="_blank" class="btn-listen">Watch Video</a></td>
+                        </tr>
+                        <tr>
+                            <td class="col-date">11 Jul 2022</td>
+                            <td class="col-title">Optimize & Control Your Brain Chemistry</td>
+                            <td class="col-expert">Dr Andrew Huberman</td>
+                            <td class="col-action"><a href="https://www.youtube.com/watch?v=T65RDBiB5Hs" target="_blank" class="btn-listen">Watch Video</a></td>
+                        </tr>
+                        <tr>
+                            <td class="col-date">08 Sep 2022</td>
+                            <td class="col-title">What You Can Eat To Heal The Brain</td>
+                            <td class="col-expert">Max Lugavere & Dr Dom D’Agostino</td>
+                            <td class="col-action"><a href="https://www.youtube.com/watch?v=uukKpTNI2fs" target="_blank" class="btn-listen">Watch Video</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="col-date">16 Jan 2023</td>
+                            <td class="col-title">Brain Foods With Dr Christopher Palmer</td>
+                            <td class="col-expert">Live Kelly and Mark</td>
+                            <td class="col-action"><a href="https://www.youtube.com/watch?v=_2St7xXnFUw" target="_blank" class="btn-listen">Watch Video</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="col-date">19 Jun 2024</td>
+                            <td class="col-title">Mental Health Laws – The Brain People Podcast</td>
+                            <td class="col-expert">Barbara O'Neill</td>
+                            <td class="col-action"><a href="https://www.youtube.com/watch?v=CJlV8Lfzbf4" target="_blank" class="btn-listen">Watch Video</a></td>
+                        </tr>
+                        <tr>
+                            <td class="col-date">19 Feb 2024</td>
+                            <td class="col-title">How to Optimize Cognitive Function & Brain Health</td>
+                            <td class="col-expert">Dr Andrew Huberman & Dr Mark D'Esposito</td>
+                            <td class="col-action"><a href="https://www.youtube.com/watch?v=HYVeP4F0GNU" target="_blank" class="btn-listen">Watch Video</a></td>
+                        </tr>
+                        <tr>
+                            <td class="col-date">13 Aug 2024</td>
+                            <td class="col-title">Brain Energy: The Metabolic Theory of Mental Illness</td>
+                            <td class="col-expert">Metabolic Health Summit feat Dr Chris Palmer</td>
+                            <td class="col-action"><a href="https://www.youtube.com/watch?v=IrPtrDLvfEQ" target="_blank" class="btn-listen">Watch Video</a></td>
+                        </tr>
+                        <tr>
+                            <td class="col-date">23 Jan 2025</td>
+                            <td class="col-title">How Foods & Nutrients Control Our Moods</td>
+                            <td class="col-expert">Dr Andrew Huberman</td>
+                            <td class="col-action"><a href="https://www.youtube.com/watch?v=Q4qWzbP0q7I" target="_blank" class="btn-listen">Watch Video</a></td>
+                        </tr>
+                       
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        
+         
+          <div style="background-color: #f5f0eb;
+              border: 1px solid #e2d9cd;
+              border-radius: 6px;
+              padding: 20px; 
+              max-width: 1400px; 
+              margin: 20px auto; 
+              font-family: Arial, 
+              sans-serif;">
+         
+         <div style="font-weight: bold; 
+              color: #333333; 
+              margin-bottom: 10px; 
+              font-size: 0.8em;"
+              
+              >⚠️Disclaimer Warning:</div>
+         
+         <p style="color: #cc0000; 
+            font-size: 15px;
+            font-style: italic; 
+            line-height: 0.9; 
+            margin: 0;"
+
+           >Medical Disclaimer &amp; Universal Subscriber Guidance: The content provided in this visual- Audio Directory/library is for educational, informational, and archival purposes only. It is not intended as medical advice, diagnosis, or treatment. You must always consult with a licensed physician or qualified healthcare professional before making any significant changes to your diet, fasting routines, exercise regimens, or overall lifestyle.</p>
+         </div>
+
+    </main>
+
+    <footer>
+        <div class="container" style="padding: 0;">
+            <p style="margin: 0 0 15px 0;">&copy; 2026 Vital Media Health Directory. All Rights Reserved.</p>
+            <p style="margin: 0;">
+                <a href="privacy.html">Privacy Policy</a> | 
+                <a href="terms.html">Terms of Service</a> | 
+                <a href="disclaimer.html">Risk Disclaimer</a>
+            
+        </div>
+    </footer>
+
+</body>
+</html>

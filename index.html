@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health & Medical Podcast and Video Hub</title>
+    <style>
+        /* --- SENIORENGERECHTES FARBSCHEMA & TYPOGRAFIE --- */
+        body {
+            background-color: #fdfbf7; /* Sanftes Creme-Weiß */
+            color: #22252a; /* Dunkles Anthrazit */
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+            font-size: 20px; /* Extra große Basisschrift */
+        }
+
+        .container {
+            max-width: 1400px; /* Breiter für das 3-Spalten-Layout */
+            margin: 0 auto;
+            padding: 0 25px;
+        }
+
+        /* --- HERO HEADER & AVATAR --- */
+        header {
+            background-color: #ffffff;
+            border-bottom: 3px solid #e6e1d6;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .profile-avatar {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            border: 4px solid #124076;
+            box-shadow: 0 6px 16px rgba(18, 64, 118, 0.1);
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+         .site-logo {
+           width: 320px;       /* Perfekte Breite für das Logo */
+          height: auto;       /* Verhindert Verzerrungen */
+          margin-bottom: 15px;
+         border-radius: 8px; /* Leicht abgerundete Ecken statt Kreis */
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: #795438;
+            font-weight: 600;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* --- HAUPTBEREICH MIT ÜBERSCHRIFTEN --- */
+        .main-section {
+            padding: 40px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: #124076;
+            margin-bottom: 10px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.3rem;
+            color: #795438;
+            margin-top: 0;
+            margin-bottom: 45px;
+            font-weight: 500;
+            max-width: 950px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* --- 3-SPALTEN LAYOUT GENERIERT --- */
+        .three-column-grid {
+            display: grid;
+            grid-template-columns: 350px 1fr 400px; /* Links: Index, Mitte: Bild, Rechts: Text */
+            gap: 30px;
+            align-items: start;
+        }
+
+        /* --- LINKE SPALTE: VIDEO/PODCAST INDEX --- */
+        .sidebar-index {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .index-title {
+            font-size: 1.4rem;
+            color: #124076;
+            margin: 0 0 10px 0;
+            border-bottom: 2px solid #e6e1d6;
+            padding-bottom: 5px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .category-card {
+            background-color: #ffffff;
+            border: 2px solid #e6e1d6;
+            border-radius: 12px;
+            padding: 15px 20px;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.01);
+        }
+
+        .category-card:hover {
+            border-color: #124076;
+            background-color: #f4f8fa;
+            transform: translateX(4px);
+        }
+
+        .category-card h3 {
+            font-size: 1.15rem;
+            color: #124076;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* --- MITTLERE SPALTE: HAUPTBILD --- */
+        /* NACHHER */
+          .center-image-box {
+          text-align: center;
+           grid-column: span 2; /* Lässt das Bild über die mittlere und rechte Spalte fließen */
+         }
+
+         .hero-image {
+         width: 100%;
+         height: auto; /* Skaliert die Höhe proportional zur Breite */
+         /* max-height und object-fit wurden entfernt, damit das Bild nicht beschnitten wird */
+         border-radius: 15px;
+         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+         border: 4px solid #ffffff;
+         }
+
+        
+
+        /* --- REACTION AUF KLEINERE BILDSCHIRME (RESPONSIVE) --- */
+        @media (max-width: 1200px) {
+            .three-column-grid {
+                grid-template-columns: 1fr; /* Wird untereinander gestapelt, wenn Bildschirm zu klein */
+            }
+            .sidebar-index {
+                order: 2; /* Index rutscht unter das Bild */
+            }
+            .center-image-box {
+                order: 1;
+            }
+            
+        }
+
+        /* --- KONTAKT & INFORMATIONEN --- */
+        .contact-section {
+            background-color: #f0eae1;
+            padding: 50px 0;
+            text-align: center;
+            border-top: 1px solid #e6e1d6;
+            margin-top: 50px;
+        }
+
+        .mail-link {
+            font-size: 2rem;
+            color: #124076;
+            font-weight: bold;
+            text-decoration: none;
+            border-bottom: 3px dashed #124076;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #22252a;
+            color: #a0aab5;
+            padding: 40px 0;
+            text-align: center;
+            font-size: 1rem;
+        }
+
+        footer a {
+            color: #ffffff;
+            text-decoration: underline;
+            margin: 0 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HAUPT-HEADER -->
+     <header>
+         <div class="container">
+          <!-- Geändert: src ist jetzt logo.png und die Klasse ist site-logo -->
+          <img src="logo.png" alt="ELMAX Logo" class="site-logo">
+          <h1 class="logo-title">Health, Nutrition & Medical Video and Podcast Hub</h1>
+          <p class="subtitle">The Ultimate Expert Visual- Audio Directory Healthy Living & Lifestyle for All</p>
+          <p class="subtitle">Healthy Living & Lifestyle for All</p>
+         </div>
+    </header>
+
+    <!-- ANPASSBARER HAUPTBEREICH -->
+    <section class="main-section">
+        <div class="container">
+            
+            <h2 class="section-title">Welcome to the Vital Media Health  Nutrition and Medical Video/Podcast Hub</h2>
+            <!-- Integrierte Option 2 aus den Emails -->
+            <p class="section-subtitle">
+                The Vital Media Health Directory provides direct Links to many thousands of hours of high-level Health, Nutrition and the latest Medical Education Videos and Podcasts (Audio) from some of the world's leading clinicians, researchers, and experts
+             </p>            
+                <p class="section-subtitle">
+               Please use the Main Video/Podcast Index to the left, to identify and select, by the simple click of your mouse, a massive playlist vault of Videos and Podcasts which cover guidance on good practices, from maintaining vibrant health to adopting specific strategies to fight chronic illness
+              </p>  
+               <p class="section-subtitle">  
+               The purpose of the Vital Media Health Directory is to simply provide you with fast and direct "Links" to Health, Nutrition and Medical Videos and Podcasts, which will inform and support you in your efforts to maintain the good health of you and your family
+            </p>
+            
+            <!-- 3-Spalten-Layout startet hier -->
+            <div class="three-column-grid">
+                
+                <!-- LINKS: VIDEO/PODCAST INDEX (Die 8 Kategorien als Sidebar) -->
+                <div class="sidebar-index">
+                    <div class="index-title">Video/Podcast Index</div>
+                    
+                    <a href="healthy-lifestyle.html" class="category-card">
+                        <h3>1. Healthy Lifestyle <span>➔</span></h3>
+                    </a>
+                    <a href="nutrition.html" class="category-card">
+                        <h3>2. Nutrition <span>➔</span></h3>
+                    </a>
+                    <a href="cancer.html" class="category-card">
+                        <h3>3. Cancer <span>➔</span></h3>
+                    </a>
+                    <a href="chronic-disease.html" class="category-card">
+                        <h3>4. Chronic Disease <span>➔</span></h3>
+                    </a>
+                    <a href="mental-health.html" class="category-card">
+                        <h3>5. Mental Health <span>➔</span></h3>
+                    </a>
+                    <a href="environmental-gut-health.html" class="category-card">
+                        <h3>6. Environmental & Gut Health <span>➔</span></h3>
+                    </a>
+                    <a href="specific-conditions.html" class="category-card">
+                        <h3>7. Specific Conditions <span>➔</span></h3>
+                    </a>
+                    <a href="deep-dives.html" class="category-card">
+                        <h3>8. Deep Dives <span>➔</span></h3>
+                    </a>
+                </div>
+
+                <!-- MITTE: HAUPTBILD (Platzhalter für "Ärzte schauen auf Elmax-Bildschirm") -->
+              <!-- MITTE: HAUPTBILD & NEUER TEXT -->
+                <div class="center-image-box">
+                 <img src="elmaxbild.jpg.jpg" alt="Ärzte schauen auf Elmax-Bildschirm" class="hero-image">
+    
+                 <!-- Erster Absatz (mit etwas Abstand zum Bild nach oben) -->
+                 <p class="section-subtitle" style="margin-top: 30px; margin-bottom: 20px;">
+                  Please select the subject of interest, in the Video/Podcast Index to the left and click on your mouse to view the 10,000 + Videos and Podcasts available.
+                 </p>
+    
+                 <!-- Zweiter Absatz -->
+                 <p class="section-subtitle">
+                  We will be continually updating the schedule of Videos and Podcasts available for you to watch and listen, so be sure to save the link to this Hub and you will then be able to keep up to date with all of our new linked Health Nutrition and Medical programs as they are released.
+                  </p>
+                 </div>
+            
+
+                
+
+            </div>
+            <!-- Ende des 3-Spalten-Layouts -->
+
+        </div>
+    </section>
+
+    <!-- KONTAKT-BEREICH -->
+    <section class="contact-section">
+        <div class="container">
+            <h2>Our support team is here to provide information on upcoming Videos and Podcasts. We would also welcome your requests to expand the numbers and range of programs on any specific subject.  Please feel free to contact us via email at any time:</h2>
+            
+            <a href="mailto:vitalmediahealth@gmail.com" class="mail-link" style="color: #124076; font-weight: bold;">vitalmediahealth@gmail.com</a>
+        </div>
+    </section>
+
+    <!-- FOOTER MIT AKTUELLEM TERMS LINK -->
+    <footer>
+        <div class="container">
+            <p style="margin: 0 0 15px 0;">&copy; 2026 Vital Media Health Hub. All Rights Reserved.</p>
+            <p style="margin: 0;">
+                <a href="privacy.html">Privacy Policy</a> | 
+                <a href="terms.html">Terms of Service</a> | 
+                <a href="disclaimer.html">Risk Disclaimer</a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stress &amp; Mental Health</title>
+    <style>
+        /* --- BRAND DESIGN (ELMAX-STYLING) --- */
+        body {
+            background-color: #fdfbf7; /* Sanftes Creme-Weiß */
+            color: #22252a; /* Dunkles Anthrazit */
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+            font-size: 20px; /* Große, lesbare Schrift */
+        }
+
+         .site-logo {
+           width: 250px;       /* Perfekte Breite für das Logo */
+          height: auto;       /* Verhindert Verzerrungen */
+          margin-bottom: 15px;
+         border-radius: 8px; /* Leicht abgerundete Ecken statt Kreis */
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .container {
+            max-width: 1400px; /* Etwas breiter für die Tabellen-Verzeichnisse */
+            margin: 0 auto;
+            padding: 34px 25px;
+        }
+
+        /* --- HEADER & TAGLINE --- */
+        header {
+            background-color: #ffffff;
+            border-bottom: 3px solid #e6e1d6;
+            padding: 35px 0;
+            text-align: center;
+        }
+
+        .logo-title {
+            font-size: 2.6rem;
+            font-weight: 800;
+            color: #124076;
+            margin: 0 0 5px 0;
+        }
+
+        .subtitle {
+            font-size: 1.4rem;
+            color: #795438;
+            font-weight: 600;
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .tagline {
+            font-size: 1.05rem;
+            color: #55585d;
+            font-style: italic;
+            font-weight: 500;
+            margin: 0;
+        }
+
+        /* --- NAVIGATION & QUICK LINKS --- */
+        .navigation-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .btn-back {
+            display: inline-block;
+            background-color: #795438;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 22px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.05rem;
+            transition: background-color 0.2s;
+        }
+
+        .btn-back:hover {
+            background-color: #5c3f29;
+        }
+
+        .quick-nav-links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .btn-nav-jump {
+            background-color: #e6e1d6;
+            color: #124076;
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .btn-nav-jump:hover {
+            background-color: #124076;
+            color: #ffffff;
+        }
+
+        /* --- SEKTIONS-STYLING --- */
+        .category-section {
+            background-color: #ffffff;
+            border: 2px solid #e6e1d6;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.02);
+            scroll-margin-top: 20px; /* Sanfter Abstand beim Hinspringen */
+        }
+
+        .category-section h2 {
+            color: #124076;
+            font-size: 2rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #124076;
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* --- VERZEICHNIS-TABELLEN --- */
+        .table-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th, td {
+            padding: 16px 18px;
+            border-bottom: 1px solid #e6e1d6;
+            vertical-align: middle;
+            text-align: left; /* Gleiche Ausrichtung für Header und Datenzellen */
+        }
+
+        th {
+            background-color: #f7f5f0;
+            color: #795438;
+            font-weight: 700;
+            font-size: 1.05rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            background-color: #fffdf9;
+        }
+
+        .col-date { width: 15%; color: #666;  }
+        .col-title { width: 48%; font-weight: 600; color: #22252a; }
+        .col-expert { width: 22%; color: #444; }
+        .col-action { width: 15%; text-align: left; }
+
+        /* --- AKTION-BUTTONS (LINKS) --- */
+        .btn-listen {
+            display: inline-block;
+            background-color: #124076;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: bold;
+            text-align: center;
+            white-space: nowrap;
+            transition: background-color 0.15s;
+        }
+
+        .btn-listen:hover {
+            background-color: #0b2c52;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #22252a;
+            color: #a0aab5;
+            padding: 5px 0;
+            text-align: center;
+            font-size: 1rem;
+            
+        }
+        footer a {
+            color: #ffffff;
+            text-decoration: underline;
+            margin: 0 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER AREA -->
+    <header>
+        <div class="container" style="padding-top:0; padding-bottom:0;">
+            <img src="logo.png" alt="ELMAX Logo" class="site-logo">
+            <h1 class="logo-title">Vital Media Health Directory</h1>
+            <p class="subtitle">Healthy Lifestyle</p>
+            <!-- Geforderte professionelle Tagline im kleineren Format -->
+            <p class="tagline">On this website we provide 10,000 + Videos and Podcasts covering a wide range of Health, Nutrition and Medical subjects</p>
+        </div>
+    </header>
+
+    <!-- MAIN INTERFACE -->
+    <main class="container">
+        
+        <!-- Navigation Oben -->
+        <div class="navigation-bar">
+            <a href="index.html" class="btn-back">➔ Back to Central Hub</a>
+            <div class="quick-nav-links">
+                <a href="healthy-lifestyle.html" class="btn-nav-jump">General Wellness</a>
+                <a href="#stress-mental" class="btn-nav-jump">Stress &amp; Mental Health</a>
+                <a href="exercise.html" class="btn-nav-jump">Exercise &amp; Movement</a>
+                <a href="sleep.html" class="btn-nav-jump">Sleep &amp; Recovery</a>
+            </div>
+        </div>
+
+        
+
+        <!-- 2. STRESS & MENTAL HEALTH SECTION -->
+        <section class="category-section" id="stress-mental">
+            <h2>🧠 Stress &amp; Mental Health</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>DATE</th>
+                            <th>TITLE</th>
+                            <th>PRESENTER</th>
+                            <th style="text-align: right;">WATCH/LISTEN</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="col-date">08 Mar 2021</td>
+                            <td class="col-title">Tools for Managing Stress & Anxiety</td>
+                            <td class="col-expert">Dr Andrew Huberman</td>
+                            <td class="col-action"><a href="https://www.youtube.com/watch?v=ntfcfJ28eiU" target="_blank" class="btn-listen">Watch Video</a></td>
+                        </tr>
+                        <tr>
+                            <td class="col-date">16 Aug 2021</td>
+                            <td class="col-title">Understanding & Treating Addiction</td>
+                            <td class="col-expert">Dr Anna Lembke & Dr Andrew Huberman</td>
+                            <td class="col-action"><a href="https://www.youtube.com/watch?v=p3JLaF_4Tz8" target="_blank" class="btn-listen">Watch Video</a></td>
+                        </tr>
+                        <tr>
+                            <td class="col-date">07 Jun 2022</td>
+                            <td class="col-title">How to Find Balance in the Age of Indulgence</td>
+                            <td class="col-expert">Dr Anna Lembke</td>
+                            <td class="col-action"><a href="https://www.youtube.com/watch?v=aEfkx3DsXjs" target="_blank" class="btn-listen">Watch Video</a></td>
+                        </tr>
+                        <tr>
+                            <td class="col-date">10 Oct 2022</td>
+                            <td class="col-title">Controlling Your Dopamine for Motivation & Focus</td>
+                            <td class="col-expert">Dr Andrew Huberman</td>
+                            <td class="col-action"><a href="https://www.youtube.com/watch?v=QmOF0crdyRU" target="_blank" class="btn-listen">Watch Video</a></td>
+                        </tr>
+                        
+                    
+                        <tr>
+                            <td class="col-date">17 Jan 2023</td>
+                            <td class="col-title">You Will NEVER Be Stressed Again (Physiological Sigh)</td>
+                            <td class="col-expert">Dr Andrew Huberman</td>
+                            <td class="col-action"><a href="https://www.youtube.com/watch?v=RKECKQWVlO4" target="_blank" class="btn-listen">Watch Video</a></td>
+                        </tr>
+                        <tr>
+                            <td class="col-date">07 Dec 2023</td>
+                            <td class="col-title">Designed to Heal: Natural Solutions</td>
+                            <td class="col-expert">Barbara O'Neill</td>
+                            <td class="col-action"><a href="https://podcasts.apple.com/us/podcast/27-designed-to-heal-natural-solutions-to-help-your/id1680644104?i=1000637914327" target="_blank" class="btn-listen">Listen Podcast</a></td>
+                        </tr>
+                        <tr>
+                            <td class="col-date">08 Dec 2023</td>
+                            <td class="col-title">How to Manage & Better Understand Stress</td>
+                            <td class="col-expert">Dr Elissa Epel & Dr Andrew Huberman</td>
+                            <td class="col-action"><a href="https://www.youtube.com/watch?v=ZUoT89ceuCs" target="_blank" class="btn-listen">Watch Video</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="col-date">2024-2025</td>
+                            <td class="col-title">The Pervasive Effect of Stress: Is It Killing You?</td>
+                            <td class="col-expert">Dr Peter Attia</td>
+                            <td class="col-action"><a href="https://www.youtube.com/watch?v=CavapSvFkOs" target="_blank" class="btn-listen">Watch Video</a></td>
+                        </tr>
+                        <tr>
+                            <td class="col-date">2024-2025</td>
+                            <td class="col-title">Emotional vs Mental Health</td>
+                            <td class="col-expert">Dr Peter Attia</td>
+                            <td class="col-action"><a href="https://www.youtube.com/watch?v=2DIsxd-74x0" target="_blank" class="btn-listen">Watch Video</a></td>
+                        </tr>
+                        <tr>
+                            <td class="col-date">2024-2025</td>
+                            <td class="col-title">Neuroinflammation: How Stress Wrecks the Brain</td>
+                            <td class="col-expert">Dr Mark Hyman</td>
+                            <td class="col-action"><a href="https://www.youtube.com/watch?v=38tf1qAw9yI" target="_blank" class="btn-listen">Watch Video</a></td>
+                        </tr>
+                        <tr>
+                            <td class="col-date">2025</td>
+                            <td class="col-title">The Real Reason You're Anxious (It's Not What You Think)</td>
+                            <td class="col-expert">Dr Eric Berg</td>
+                            <td class="col-action"><a href="https://www.youtube.com/watch?v=GjNAFk0sHDA" target="_blank" class="btn-listen">Watch Video</a></td>
+                        </tr>
+                       
+                        <tr>
+                            <td class="col-date">2025-2026</td>
+                            <td class="col-title">How to Control Your Cortisol & Overcome Burnout</td>
+                            <td class="col-expert">Dr Andrew Huberman</td>
+                            <td class="col-action"><a href="https://www.youtube.com/watch?v=A8FmAXfBoag" target="_blank" class="btn-listen">Listen Podcast</a></td>
+                        </tr>
+                        <tr>
+                            <td class="col-date">2025-2026</td>
+                            <td class="col-title">Why It's Hard to Turn Stress (Cortisol) Off</td>
+                            <td class="col-expert">Dr Eric Berg</td>
+                            <td class="col-action"><a href="https://www.youtube.com/watch?v=ii_OWTqn1rw" target="_blank" class="btn-listen">Watch Video</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="col-date">25 Apr 2025</td>
+                            <td class="col-title">Your Trauma Is Secretly Controlling You!</td>
+                            <td class="col-expert">Dr Gabor Maté</td>
+                            <td class="col-action"><a href="https://podcasts.apple.com/us/podcast/moment-210-dr-gabor-mat%C3%A9-your-trauma-is-secretly-controlling/id1291423644?i=1000704852949&at=1000lSDb" target="_blank" class="btn-listen">Listen Podcast</a></td>
+                        </tr>
+                        <tr>
+                            <td class="col-date">22 May 2025</td>
+                            <td class="col-title">Maximize Productivity & Health With Daily Tools</td>
+                            <td class="col-expert">Dr Andrew Huberman</td>
+                            <td class="col-action"><a href="https://www.youtube.com/watch?v=Pmd6knanPKw" target="_blank" class="btn-listen">Watch Video</a></td>
+                        </tr>
+                        <tr>
+                            <td class="col-date">Dec 2025</td>
+                            <td class="col-title">Dopamine Fasting - Linked to 30+ Videos</td>
+                            <td class="col-expert">Dr Anna Lembke</td>
+                            <td class="col-action"><a href="https://www.youtube.com/results?search_query=dopamine+fasting+Anna+Lembke" target="_blank" class="btn-listen">Watch Videos</a></td>
+                        </tr>
+                        <tr>
+                            <td class="col-date">2026</td>
+                            <td class="col-title">Why Your Nervous System Is Still Broken</td>
+                            <td class="col-expert">Dr Mark Hyman</td>
+                            <td class="col-action"><a href="https://www.youtube.com/watch?v=d-YID7p6-ko" target="_blank" class="btn-listen">Watch Video</a></td>
+                        </tr>
+                        
+                        
+                        
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+         <div style="background-color: #f5f0eb;
+              border: 1px solid #e2d9cd;
+              border-radius: 6px;
+              padding: 20px; 
+              max-width: 1400px; 
+              margin: 20px auto; 
+              font-family: Arial, 
+              sans-serif;">
+         
+         <div style="font-weight: bold; 
+              color: #333333; 
+              margin-bottom: 10px; 
+              font-size: 0.8em;"
+              
+              >⚠️Disclaimer Warning:</div>
+         
+         <p style="color: #cc0000; 
+            font-size: 15px;
+            font-style: italic; 
+            line-height: 0.9; 
+            margin: 0;"
+
+           >Medical Disclaimer &amp; Universal Subscriber Guidance: The content provided in this visual- Audio Directory/library is for educational, informational, and archival purposes only. It is not intended as medical advice, diagnosis, or treatment. You must always consult with a licensed physician or qualified healthcare professional before making any significant changes to your diet, fasting routines, exercise regimens, or overall lifestyle.</p>
+         </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p style="margin: 0 0 15px 0;">&copy; 2026 Vital Media Health Directory. All Rights Reserved.</p>
+            <p style="margin: 0;">
+                <a href="privacy.html">Privacy Policy</a> | 
+                <a href="terms.html">Terms of Service</a> | 
+                <a href="disclaimer.html">Risk Disclaimer</a>
+        </div>
+    </footer>
+
+</body>
+</html>
